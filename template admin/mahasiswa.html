@@ -10,6 +10,8 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-success">
@@ -111,14 +113,105 @@
 
                         </div>
                         <div class="card mb-4">
-                            <div class="card-header">
+                            <div class="d-flex justify-content-between card-header">
+                                <div class="text-auto">
+                                    <i class="fas fa-table me-1"></i>
+                                    Data mahasiswa
+                                </div>
+                                <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                    <div class="modal-dialog modal-lg">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalToggleLabel">tambah data mahasiswa</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                  <label for="exampleInputNim" class="form-label">Nama</label>
+                                                  <input type="integer" class="form-control" id="exampleInputNim" aria-describedby="NimHelp">
+                                                  
+                                                </div>
+                                                <div class="mb-3">
+                                                  <label for="exampleInputnama" class="form-label">Nim</label>
+                                                  <input type="text" class="form-control" id="exampleInputnama" aria-describedby="namaHelp">
+                                                  
+                                                </div>
+                                                <div class="mb-3">
+
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Prodi</option>
+                                                    <option value="1">Teknik komputer</option>
+                                                    <option value="2">Teknik informatika</option>
+                                                    <option value="3">sastra inggris</option>
+                                                  </select>
+                                                </div>
+                                                <div class="mb-3">
+
+                                                    <select class="form-select" aria-label="Default select example">
+                                                      <option selected>fakultas</option>
+                                                      <option value="1">fakultas teknologi informasi</option>
+                                                      <option value="2">fakultas peternakan </option>
+                                                      <option value="3">fakultas fisipol</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleInputnama" class="form-label">Kelas</label>
+                                                    <input type="text" class="form-control" id="exampleInputnama" aria-describedby="namaHelp">
+                                                    
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleInputnama" class="form-label">semester</label>
+                                                    <input type="text" class="form-control" id="exampleInputnama" aria-describedby="namaHelp">
+                                                    
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleInputnama" class="form-label">tahun masuk</label>
+                                                    <input type="text" class="form-control" id="exampleInputnama" aria-describedby="namaHelp">
+                                                    
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-light" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">close</button>
+                                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">submit</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between ">
+
+                                    <div class="mx-3" >
+
+                                        <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><span>
+                                               <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </span><span>
+                                        Tambah data
+                                        </span></a>
+                                    </div>
+                                </div>
+                                   
+                            </div>
+                        <!-- <div class="card mb-4">
+                            <div class="d-flex justify-content-between card-header">
+                            <div class="">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
                             </div>
-                            
+
+                                <div class="mx-3" >
+                                    <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><span>
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </span><span>
+                                    Tambah data
+                                    </span></a>
+                                </div>
+
+                            </div> -->
+                    
                             <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
+                                <table id="datatablesSimple" class="text center">
+                                    <thead class="btn-success">
                                         <tr>
                                             <th>Nama</th>
                                             <th>NIM</th>
@@ -140,10 +233,13 @@
                                             <td>11</td>
                                             <td>20001</td>
                                             <td>
-                                                <div class="d-flex flex-column">
-                                                    <button type="button" class="btn btn-warning mb-2">Edit</button>
-                                                    <button type="button" class="btn btn-danger">Hapus</button>
-                                                </div>
+                                                <a href="">
+                                                    <i class="fa fa-trash btn-light mx-1 " aria-hidden="true"></i>
+                                                </a>
+                                                <a href="">
+                                                    <i class="far fa-edit btn-light mx-1"></i>
+                                                </a>
+                                                
                                             </td>
                                         </tr>
                                     </tbody>

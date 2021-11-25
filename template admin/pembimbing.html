@@ -15,16 +15,17 @@
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-success">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">SIMTA</a>
+            
+                <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                       
+                    </div>
+                </form>
+            
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </form>
-            <!-- Navbar-->
+            
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
@@ -102,13 +103,75 @@
                             <li class="breadcrumb-item active">Pembimbing</li>
                         </ol>
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Data Dosen Pembimbing
+                            <div class="d-flex justify-content-between card-header">
+                                <div class="text-auto">
+                                    <i class="fas fa-table me-1"></i>
+                                    Data Dosen Pembimbing
+                                </div>
+                                <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                    <div class="modal-dialog modal-lg">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalToggleLabel">silakan isi data terlebih dahulu</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                  <label for="exampleInputNim" class="form-label">Nama</label>
+                                                  <input type="integer" class="form-control" id="exampleInputNim" aria-describedby="NimHelp">
+                                                  
+                                                </div>
+                                                <div class="mb-3">
+                                                  <label for="exampleInputnama" class="form-label">NIP</label>
+                                                  <input type="text" class="form-control" id="exampleInputnama" aria-describedby="namaHelp">
+                                                  
+                                                </div>
+                                                </select>
+                                                <div class="mb-3">
+                                                    <label for="exampleInputnama" class="form-label">NIDN</label>
+                                                    <input type="text" class="form-control" id="exampleInputnama" aria-describedby="namaHelp">
+                                                    
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleInputnama" class="form-label">No.Hp</label>
+                                                    <input type="text" class="form-control" id="exampleInputnama" aria-describedby="namaHelp">
+                                                    
+                                                </div>
+                                                <div class="mb-3">
+
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Prodi</option>
+                                                        <option value="1">Teknik komputer</option>
+                                                        <option value="2">Teknik informatika</option>
+                                                        <option value="3">sastra inggris</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">submit</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between ">
+
+                                    <div class="mx-3" >
+
+                                        <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><span>
+                                               <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </span><span>
+                                        Tambah data
+                                        </span></a>
+                                    </div>
+                                </div>
+                                   
                             </div>
+
                             <div class="card-body">
                                 <table id="datatablesSimple">
-                                    <thead>
+                                    <thead class="btn-success">
                                         <tr>
                                             <th>Nama</th>
                                             <th>NIP</th>
@@ -147,6 +210,14 @@
                 </footer>
             </div>
         </div>
+        <script>
+            var myModal = document.exampleModalToggle2('myModal')
+            var myInput = document.exampleModalToggle2('myInput')
+    
+            myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+            })
+            </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
